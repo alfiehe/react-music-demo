@@ -7,7 +7,7 @@ import { SliderContainer } from './style';
 // install Swiper components
 SwiperCore.use([Pagination]);
 
-function Slider({ bannerList }) {
+function Slider({ data }) {
   return (
     <SliderContainer>
       <Swiper
@@ -18,7 +18,7 @@ function Slider({ bannerList }) {
         onSlideChange={() => console.log('slide change')}
       >
         {
-          bannerList.map((slider, index) => {
+          data.map((slider, index) => {
             return (
               <SwiperSlide className="swiper-slide" key={slider.imageUrl + index}>
                 <img src={slider.imageUrl} width="100%" height="100%" alt="推荐" />
